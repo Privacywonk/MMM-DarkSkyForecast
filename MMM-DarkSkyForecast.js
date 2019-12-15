@@ -319,6 +319,7 @@ Module.register("MMM-DarkSkyForecast", {
     return {
       "currently" : {
         temperature: Math.round(this.weatherData.currently.temperature) + "°",
+        feelsLike:  Math.round(this.weatherData.currently.apparentTemperature) + "°",
         animatedIconId: this.config.useAnimatedIcons ? this.getAnimatedIconId() : null,
         animatedIconName: this.weatherData.currently.icon,
         iconPath: this.generateIconSrc(this.weatherData.currently.icon),
@@ -365,6 +366,7 @@ Module.register("MMM-DarkSkyForecast", {
 
     if (type == "hourly") { //just display projected temperature for that hour
       fItem.temperature = Math.round(fData.temperature) + "°";
+      fItem.feelsLike = Math.round(fData.apparentTemperature) +"°";
     } else { //display High / Low temperatures
       fItem.tempRange = this.formatHiLowTemperature(fData.temperatureMax,fData.temperatureMin);
     }
