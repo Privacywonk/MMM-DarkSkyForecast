@@ -15,7 +15,7 @@
           {% else %}
             <img class="current icon current" src="{{ forecast.currently.iconPath }}" />
           {% endif %}
-          <span class="current temperature bright large light">{{ forecast.currently.temperature }}</span>
+          <span class="current temperature bright large light">{{ forecast.currently.temperature }} / {{ forecast.currently.feelsLike }}</span>
         </span>
       </div>
     {% endif %}
@@ -116,7 +116,7 @@
                 <img class="forecast-icon" src="{{ h.iconPath }}" />
               {% endif %}
               </span>
-              <span class="temperature small">{{ h.temperature }}</span>
+              <span class="temperature small">{{ h.temperature }} / {{ h.feelsLike}}</span>
 
 
               {% if config.showPrecipitation %}
